@@ -17,7 +17,7 @@ class Professor(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64))
     dept = db.Column(db.String(10))
-    courses = db.relationship('Course', backref='professor')
+    courses = db.relationship('Course', backref='professor', cascade="delete")
 
 
 class Course(db.Model):
